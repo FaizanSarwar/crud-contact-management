@@ -19,7 +19,7 @@ const InputFeilds = () => {
     name: "",
     email: "",
   });
-  const [table, setTable] = useState([]);
+  const [table, setTable] = useState(getLocalData());
   const [storeIdForUpdate, setStoreIdForUpdate] = useState();
   const[changeBtn,setChangeBtn] =useState(false)
 
@@ -83,9 +83,9 @@ const InputFeilds = () => {
 
 
    //set data in local storage...
-  //  useEffect(() => {
-  //   localStorage.setItem("mylist", JSON.stringify(table));
-  // }, [table]);
+   useEffect(() => {
+    localStorage.setItem("mylist", JSON.stringify(table));
+  }, [table]);
 
 
   return (
